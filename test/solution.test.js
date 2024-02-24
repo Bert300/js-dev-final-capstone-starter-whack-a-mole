@@ -9,9 +9,7 @@ const onPageConsole = (msg) => {
   );
   msgs.push(msg.text());
 };
-
 describe("US-01: Basic Game Structure", () => {
-
   beforeEach(async () => {
     page.on("console", onPageConsole);
     page.on("pageerror", (err) => console.log(err));
