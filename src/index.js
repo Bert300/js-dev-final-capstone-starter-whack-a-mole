@@ -20,9 +20,9 @@ function play(){
   playAudio(song);
 }
 
-let time = 0;
+let time = 15;
 let timer;
-let lastHole = -1;
+let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
 
@@ -61,13 +61,13 @@ function randomInteger(min, max) {
  *
  */
 function setDelay(difficulty) {
-  if ( difficulty === 'hard' ) {
-    return randomInteger(600,1200);
-  }
-  if ( difficulty === 'normal') {
-    return 1000;
-  }
-  return 1500;  
+	if (difficulty === "easy") {
+		return 1500;
+	} else if (difficulty === "normal") {
+		return 1000;
+	} else {
+		return randomInteger(600, 1200);
+	}
 }
 
 /**
